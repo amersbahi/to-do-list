@@ -1,0 +1,15 @@
+{% extends "toDo/html/layout.html" %}
+
+ {% load static%}
+  {% block body%}
+  <div class="activeTask">
+        <h1>Task List</h1>
+        <ul>
+            {% for task in tasks %}
+                <li><a href="{% url 'task-detail' task.id %}">{{ task.title }}</a></li>
+            {% endfor %}
+        </ul>
+ </div>
+  <button class="btn btn-primary"> <a href="{% url 'task-create' %}" style="color: white; font-size: 50px;" >Create New Task</a></button>
+
+{% endblock%}

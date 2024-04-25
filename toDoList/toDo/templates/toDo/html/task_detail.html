@@ -1,0 +1,13 @@
+{% extends "toDo/html/layout.html"%}
+{% load static%}
+
+ {% block body%}
+ <div class="activeTask">
+        <h1>{{ task.title }}</h1>
+        <p>{{ task.description }}</p>
+        <p>Status: {% if task.completed %}Completed{% else %}Pending{% endif %}</p>
+        <a href="{% url 'task-update' task.id %}">Update</a>
+        <a href="{% url 'task-delete' task.id %}">Delete</a>
+        <a href="{% url 'task-list' %}">Back to Task List</a>
+ </div>
+{% endblock%}

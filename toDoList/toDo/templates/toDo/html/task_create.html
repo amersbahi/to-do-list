@@ -1,0 +1,17 @@
+{% extends "toDo/html/layout.html"%}
+{% load static %}
+
+{% block body%}
+  <div class="activeTask">
+        <h1>Create Task</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title"><br>
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description"></textarea><br>
+            <button type="submit">Create Task</button>
+        </form>
+        <a href="{% url 'task-list' %}">Back to Task List</a>
+ </div>
+{% endblock%}

@@ -1,0 +1,34 @@
+#header{
+ background-color: aqua;
+ display: flex;
+ justify-content: space-between; /* Ensures the h1 is on the left and the a tag is centered */
+    align-items: center; /* Centers child elements vertically */
+ 
+
+  
+}
+#header h1{
+
+    margin-right: auto; 
+}
+#header a{
+    margin: auto;
+    color: red;
+}
+#taskform{
+    text-align: center;
+}
+
+.activeTask {
+        text-align: center; /* Center the content horizontally */
+        background-color: white; /* Set the background color */
+        padding: 20px; /* Add some padding for better readability */
+        max-width: 600px; /* Set the maximum width */
+        margin: 0 auto; /* Center the div horizontally */
+        border-style: unset;
+    }
+
+.activeTask ul {
+        list-style-type: none; /* Remove default list styling */
+        padding: 0; /* Remove default padding */
+    }

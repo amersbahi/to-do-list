@@ -1,0 +1,19 @@
+{% extends "toDo/html/layout.html"%}
+{%load static%}
+
+{% block body%}
+  <div class="activeTask">
+        <h1>Update Task</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" value="{{ task.title }}"><br>
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description">{{ task.description }}</textarea><br>
+            <label for="completed">Completed:</label><br>
+            <input type="checkbox" id="completed" name="completed" {% if task.completed %}checked{% endif %}><br>
+            <button type="submit">Update Task</button>
+        </form>
+        <a href="{% url 'task-list' %}">Back to Task List</a>
+ </div>
+{% endblock%}
